@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.isabelxavier.desafio_todolist.entity.Todo;
 import br.com.isabelxavier.desafio_todolist.service.TodoService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -22,7 +23,7 @@ public class TodoController {
     private TodoService todoService;
 
     @PostMapping
-    List<Todo> create(@RequestBody Todo todo) {
+    List<Todo> create(@RequestBody @Valid Todo todo) {
 
         return todoService.create(todo);
 
