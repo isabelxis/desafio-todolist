@@ -54,7 +54,7 @@ A aplicação oferece os seguintes endpoints:
 
 2. Configure o banco de dados no arquivo `application.properties`
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/todolist
+   spring.datasource.url=jdbc:mysql://localhost:3306/todoList
    spring.datasource.username=seu_usuario
    spring.datasource.password=sua_senha
    ```
@@ -71,6 +71,120 @@ A aplicação oferece os seguintes endpoints:
    ```
 
 A aplicação estará disponível em `http://localhost:8080`
+
+## 🔌 API Endpoints
+
+### Para fazer as requisições HTTP abaixo, foi utilizada o Insomnia:
+
+1. Criar
+```
+POST: localhost:8080/todos
+Body:
+{
+   "nome": "Task 1",
+   "descricao": "Desc task 1",
+   "prioridade": 1
+}
+
+Preview:
+[
+	{
+		"descricao": "Desc task 1",
+		"id": 1,
+		"nome": "Task 1",
+		"prioridade": 1,
+		"realizado": false
+	}
+]
+
+```
+
+2. Listar
+```
+GET: localhost:8080/todos
+Preview:
+[
+	{
+		"descricao": "Desc task 2",
+		"id": 2,
+		"nome": "Task 2",
+		"prioridade": 10,
+		"realizado": false
+	},
+	{
+		"descricao": "Desc task 1",
+		"id": 1,
+		"nome": "Task 1",
+		"prioridade": 1,
+		"realizado": false
+	}
+]
+
+```
+
+3. Alterar
+```
+PUT: localhost:8080/todos
+
+Body:
+{   	
+		"id": 1,
+		"nome": "Task 1",
+		"descricao": "Desc task 1",
+		"prioridade": 10,
+		"realizado": true
+}
+
+Preview:
+[
+	{
+		"descricao": "Desc task 1",
+		"id": 1,
+		"nome": "Task 1",
+		"prioridade": 10,
+		"realizado": true
+	},
+	{
+		"descricao": "Desc task 2",
+		"id": 2,
+		"nome": "Task 2",
+		"prioridade": 10,
+		"realizado": false
+	},
+	{
+		"descricao": "Desc task 3",
+		"id": 3,
+		"nome": "Task 3",
+		"prioridade": 2,
+		"realizado": false
+	}
+]
+
+```
+
+4. Deletar
+```
+DELETE: localhost:8080/todos/2
+Preview:
+[
+	{
+		"descricao": "Desc task 1",
+		"id": 1,
+		"nome": "Task 1",
+		"prioridade": 10,
+		"realizado": true
+	},
+	{
+		"descricao": "Desc task 3",
+		"id": 3,
+		"nome": "Task 3",
+		"prioridade": 2,
+		"realizado": false
+	}
+]
+
+```
+
 
 ## 📂 Estrutura do Projeto
 

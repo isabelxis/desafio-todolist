@@ -14,12 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.isabelxavier.desafio_todolist.entity.Todo;
 import br.com.isabelxavier.desafio_todolist.service.TodoService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @RestController
 @RequestMapping("/todos")
 @AllArgsConstructor
-@NoArgsConstructor
 public class TodoController {
     private TodoService todoService;
 
