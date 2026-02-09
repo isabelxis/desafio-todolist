@@ -36,8 +36,7 @@ public class TodoController {
     }
 
     @PutMapping
-    List<Todo> update(@RequestBody Todo todo){
-
+	List<Todo> update(@RequestBody @Valid Todo todo){
         return todoService.update(todo);    
         
     }

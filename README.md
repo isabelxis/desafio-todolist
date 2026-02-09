@@ -16,6 +16,7 @@ Este é um sistema de To-Do List que permite aos usuários gerenciar suas tarefa
 - **MySQL** - Banco de dados relacional
 - **Lombok** - Redução de boilerplate
 - **Maven** - Gerenciador de dependências
+- **H2 Database** - Banco de Dados usado pra teste
 
 ## 📦 Funcionalidades
 
